@@ -14,10 +14,12 @@ class MLS::Cli
     puts "What are you interested?"
     puts "1. Player "
     puts "2. Teams "
+    puts "3. Exit"
     puts ""
     puts "--------------------------------"
-    input = gets.strip.to_i
     valid_input(input)
+
+
     puts "User input: #{input}"
     if input ==  1
       puts "under construction "
@@ -41,8 +43,9 @@ class MLS::Cli
   end
 
 
-  def valid_input(input)
-    while ((input != 1) || (input != 2))
+  def valid_input
+      input = gets.strip.to_i
+    while ((input != 1) && (input != 2)) && (input != 3))
       puts "Wrong selection, please select 1, 2 or 3"
       input = gets.strip.to_i
     end
