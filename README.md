@@ -22,9 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-to tun the CLI only run this 
+to tun the CLI  run this 
 
-$ ruby lib/Mls.rb
+    $ ruby lib/Mls.rb
 
 ## Development
 
