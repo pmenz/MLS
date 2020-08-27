@@ -4,7 +4,7 @@ data = Nokogiri::HTML(html)
 clubs = data.css('.field li a').map do |el|
   {link: "https://www.mlssoccer.com#{el.attr('href')}", name: el.text}
 end
-#https://www.mlssoccer.com/rosters/2020/atlanta-united
+https://www.mlssoccer.com/rosters/2020/atlanta-united
 
 def extract_club_id(string)
   line = string.split(';').find{|str| str.include? "clubID"}
