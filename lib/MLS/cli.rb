@@ -19,26 +19,26 @@ class MLS::Cli
     input = gets.strip.to_i
     valid_input(input)
     puts "User input: #{input}"
-=begin
     if input ==  1
       puts "under construction "
       start
     elsif input == 2
       print_teams
     end
+  end
 
+  def print_teams
+    Team.list
+=begin
     puts ""
     puts ""
     puts "--------------------------------"
     puts "please select the team you are interested"
     input2 = gets
 
-    Team.list
-
     puts "Roster"
 =end
   end
-
 
 
   def valid_input(input)
