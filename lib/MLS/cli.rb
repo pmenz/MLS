@@ -17,7 +17,8 @@ class MLS::Cli
     puts "3. Exit"
     puts ""
     puts "--------------------------------"
-    valid_input(input)
+    print "option:"
+    valid_input
 
 
     puts "User input: #{input}"
@@ -29,8 +30,16 @@ class MLS::Cli
     end
   end
 
-  def print_teams
-    Team.list
+  def player_search
+    puts "WIP"
+  end
+
+  def mls_teams
+    puts "mls_teams"
+  end
+
+  #def print_teams
+    #Team.list
 =begin
     puts ""
     puts ""
@@ -44,11 +53,20 @@ class MLS::Cli
 
 
   def valid_input
+
       input = gets.strip.to_i
-    while ((input != 1) && (input != 2)) && (input != 3))
-      puts "Wrong selection, please select 1, 2 or 3"
-      input = gets.strip.to_i
+      case input
+      when input == 1
+        player_search
+      when input == 2
+        mls_teams
+      when input == 3
+        puts "Good bye"
+        return
+      else
+        puts "please select a valid option(1,2 or 3)"
+        puts "Option:"
+        valid_input
+      end
+
     end
-    input
-  end
-end
