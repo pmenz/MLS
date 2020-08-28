@@ -41,8 +41,7 @@ class MLS::Cli
   end
 
   def team_list
-    Team.parse_clubs
-    Team.list
+    Team.new("3","helo")
   end
 =begin
     url = 'https://www.mlssoccer.com/rosters/2020'

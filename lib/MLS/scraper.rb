@@ -24,5 +24,5 @@ def roster_link(club_id)
   -24&player_roster_designation=Supplemental%20Roster%20Slots%2025-28&player_roster_designation
   =Supplemental%20Roster%20Slots%2029-30&club_opta_id=#{club_id}"
 end
-a
+
 end

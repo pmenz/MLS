@@ -1,9 +1,9 @@
 class MLS::Team
 
   @@teams = []
-  attr_accesor :id ,:name, :roster
+  attr_accessor :id ,:name, :roster
 
-  def initialize(id, name)
+  def initialize(id=nil, name=nil)
     @id = id
     @name = name
     @roster = roster
@@ -13,14 +13,12 @@ class MLS::Team
   def self.parse_clubs
     Scraper.get_clubs_info.each do |idx , el|
       Team.new("#{i+1}","#{el}")
+    end
   end
 
   def self.list
-    all.each {|el| puts "#{Team.id}. #{Team.name}"}
-  def
-
-  def self.all
-    @@teams
+    @@teams.each do |el|
+      puts "#{Team.id}. #{Team.name}"
+    end
   end
-
 end
