@@ -23,7 +23,7 @@ class MLS::Team
 
    def self.parse_clubs
      get_clubs.each_with_index do |idx , el|
-       Team.new("#{el+1}","#{idx}")
+       MLS::Team.new("#{el+1}","#{idx}")
      end
    end
 
