@@ -47,9 +47,20 @@ class MLS::Cli
   end
 
   def team_menu
-
-    puts "would you like to the roster of a team? Y/n"
+    puts "Would you like to the roster of a team? (y/n)"
     input = gets
+    option(input)
+  end
+
+  def option(input)
+    if input == "y"
+      puts "select team number"
+      puts "roster"
+    elsif input == "n"
+      puts "menu option"
+    else
+      puts "wrong selection"
+    end
   end
 
   def exit
