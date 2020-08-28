@@ -1,32 +1,38 @@
 class MLS::Cli
 
   def call
-    #Mls::Scraper.new.get_data
-
     puts "--------------------------------"
     puts "Welcome to MLS Teams and Players!"
+    puts "--------------------------------"
     puts "--------------------------------"
     start
   end
 
   def start
-    puts "."
+    puts " "
     puts "What are you interested?"
+
     puts "1. Player "
     puts "2. Teams "
     puts "3. Exit"
     puts ""
     puts "--------------------------------"
-    print "option:"
-    valid_input
+    puts "option:"
+    user_valid_input
+  end
 
-
-    puts "User input: #{input}"
-    if input ==  1
-      puts "under construction "
-      start
+  def user_valid_input
+    input = gets.strip.to_i
+    if input == 1
+      player_search
     elsif input == 2
-      print_teams
+      team_list
+    elsif input == 3
+      puts "Goodbye!"
+      return
+    else
+      puts "please select a valid option(1, 2 or 3)"
+      user_valid_input
     end
   end
 
@@ -34,39 +40,7 @@ class MLS::Cli
     puts "WIP"
   end
 
-  def mls_teams
+  def team_list
     puts "mls_teams"
   end
-
-  #def print_teams
-    #Team.list
-=begin
-    puts ""
-    puts ""
-    puts "--------------------------------"
-    puts "please select the team you are interested"
-    input2 = gets
-
-    puts "Roster"
-=end
   end
-
-
-  def valid_input
-
-      input = gets.strip.to_i
-      case input
-      when input == 1
-        player_search
-      when input == 2
-        mls_teams
-      when input == 3
-        puts "Good bye"
-        return
-      else
-        puts "please select a valid option(1,2 or 3)"
-        puts "Option:"
-        valid_input
-      end
-
-    end
