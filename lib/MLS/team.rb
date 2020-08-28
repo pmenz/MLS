@@ -1,4 +1,4 @@
-class MLS::Teams
+class MLS::Team
 
   @@teams = []
   attr_accesor :id ,:name, :roster

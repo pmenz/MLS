@@ -1,5 +1,7 @@
 class MLS::Scraper
 
+
+def self.get_clubs_info
 url = 'https://www.mlssoccer.com/rosters/2020'
 html = open(url)
 data = Nokogiri::HTML(html)

@@ -26,7 +26,7 @@ class MLS::Cli
     if input == 1
       player_search
     elsif input == 2
-      team_list
+      klteam_list
     elsif input == 3
     puts "Goodbye!"
       return
@@ -43,6 +43,7 @@ class MLS::Cli
   def team_list
     Team.parse_clubs
     Team.list
+  end
 =begin
     url = 'https://www.mlssoccer.com/rosters/2020'
     html = open(url)
@@ -53,8 +54,5 @@ class MLS::Cli
     clubs.each_with_index do |el, idx|
     puts "#{idx+1}.#{el}."
 =end
-  end
 
-
-  
   end
