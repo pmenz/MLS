@@ -1,14 +1,21 @@
 class MLS::Player
 
-  attr_accessor :name, :jersey_number, :status
-  attr_reader :team
+  attr_accessor :jersey_number, :position, :roster_designations
 
-  def initialize(name, jersey_number, status)
-    @name = name
+  attr_reader :first_name, :last_name, :birth_country
+    @@player_info = []
+  def initialize(jersey_number, first_name, last_name,
+    position, roster_designations, birth_country)
+
     @jersey_number = jersey_number
-    @status = status
-    @team = team
+    @first_name = first_name
+    @last_name = last_name
+    @position = position
+    @roster_designations = roster_designations
+    @birth_country = birth_country
+    @@player_info<< self
   end
 
+  
 
 end

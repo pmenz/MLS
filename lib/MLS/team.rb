@@ -12,13 +12,7 @@ class MLS::Team
     @@clubs = []
 
    def self.get_clubs
-     url = 'https://www.mlssoccer.com/rosters/2020'
-     html = open(url)
-     data = Nokogiri::HTML(html)
-     club = data.css('.field li a').map do |el|
-       el.text
-     end
-     club
+     MLS::Scraper.get_clubs
    end
 
    def self.parse_clubs

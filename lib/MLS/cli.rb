@@ -47,13 +47,13 @@ class MLS::Cli
   end
 
   def team_menu
-    puts "print team roster"
+  
     puts "would you like to know more about a player? Y/n"
     input = gets
   end
 
   def exit
-    puts "Adios! Chao!"
+    puts "Adios! Chio!"
     return
   end
 end
