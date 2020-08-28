@@ -1,8 +1,10 @@
 # MLS
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/MLS`. To experiment with that code, run `bin/console` for an interactive prompt.
+MLS its a project made for Flatiron School.
+This CLI will scrape and generate classes with the data acquired from the web.
+MLS-CLI uses the data from the MLS website of USA and it will give you the list
+of teams and players.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,9 +24,9 @@ Or install it yourself as:
 
 ## Usage
 
-to tun the CLI  run this 
+to tun the CLI  run this
 
-    $ ruby lib/Mls.rb
+  $  ruby bin/mls.rb
 
 ## Development
 
