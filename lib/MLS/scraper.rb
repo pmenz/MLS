@@ -1,6 +1,5 @@
 class MLS::Scraper
 
-attr_accessor :name
 
   def self.get_clubs
     url = 'https://www.mlssoccer.com/rosters/2020'
@@ -22,20 +21,16 @@ attr_accessor :name
   end
 
   def team_roster(team_selected)
-    #review code
     team_uri = clubs.find{|el| el[:name] == team_selected}[:link]
     html = open(team_uri)
     data = Nokogiri::HTML(html)
     raw_content = data.css('meta[name="description"]').first.attr('content')
     club_id = extract_club_id(raw_content)
-
     team = roster_link(club_id)
     raw_data = open(team).read
     data = JSON.parse(raw_data)
     player_info = data.map do |player_info|
-      "#{player_info["jersey_number"]} #{player_info["first_name"]} #{player_info["last_name"]} #{player_info["position"]} #{player_info["roster_designations"]} #{player_info["birt"]}
+      "#{player_info["jersey_number"]} #{player_info["first_name"]} #{player_info["last_name"]} #{player_info["position"]} #{player_info["roster_designations"]} #{player_info["birt"]}"
       end
   end
-
-
 end
