@@ -10,9 +10,14 @@ class MLS::Teams
     @@teams << self
   end
 
-  def self.display_clubs
-    Scraper.get_clubs
+  def self.parse_clubs
+    Scraper.get_clubs_info.each do |idx , el|
+      Team.new("#{i+1}","#{el}")
   end
+
+  def self.list
+
+  def
 
   def self.all
     @@teams
