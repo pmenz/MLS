@@ -28,8 +28,12 @@ class MLS::Cli
     elsif input == 2
       MLS::Team.get_clubs
       MLS::Team.parse_clubs
+      puts "--------------------------------"
+      puts "---------- MLS Teams -----------"
+      puts "--------------------------------"
+      puts "--------------------------------"
       MLS::Team.print_clubs
-    elsif input == 3
+      elsif input == 3
     puts "Goodbye!"
       return
     else
@@ -41,19 +45,6 @@ class MLS::Cli
   def player_search
     puts "WIP"
   end
-
-  def team_list
-    Team.new("3","helo")
-  end
-=begin
-    url = 'https://www.mlssoccer.com/rosters/2020'
-    html = open(url)
-    data = Nokogiri::HTML(html)
-      clubs = data.css('.field li a').map do |el|
-      el.text
-      end
-    clubs.each_with_index do |el, idx|
-    puts "#{idx+1}.#{el}."
-=end
+  
 
   end
