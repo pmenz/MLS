@@ -47,8 +47,8 @@ class MLS::Cli
   end
 
   def team_menu
-  
-    puts "would you like to know more about a player? Y/n"
+
+    puts "would you like to the roster of a team? Y/n"
     input = gets
   end
 
