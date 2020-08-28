@@ -28,10 +28,10 @@ class MLS::Cli
     elsif input == 2
       team_list
     elsif input == 3
-      puts "Goodbye!"
+    puts "Goodbye!"
       return
     else
-      puts "please select a valid option(1, 2 or 3)"
+    puts "please select a valid option(1, 2 or 3)"
       user_valid_input
     end
   end
@@ -41,6 +41,16 @@ class MLS::Cli
   end
 
   def team_list
-    puts "mls_teams"
+    url = 'https://www.mlssoccer.com/rosters/2020'
+    html = open(url)
+    data = Nokogiri::HTML(html)
+      clubs = data.css('.field li a').map do |el|
+      el.text
+      end
+    clubs.each_with_index do |el, idx|
+    puts "#{idx+1}.#{el}."
+  end
+
+
   end
   end

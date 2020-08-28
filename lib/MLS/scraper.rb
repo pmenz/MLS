@@ -1,3 +1,5 @@
+class MLS::Scraper
+
 url = 'https://www.mlssoccer.com/rosters/2020'
 html = open(url)
 data = Nokogiri::HTML(html)
@@ -12,7 +14,11 @@ def extract_club_id(string)
 end
 
 def roster_link(club_id)
-  "https://eos-api.mlsdigital.net/v1/www.mlssoccer.com/players?token=mp7publicdemo&player_status=active&order_by=player_last_name&player_roster_designation=Senior%20Roster&player_roster_designation=Supplemental%20Roster%20Slots%2021-24&player_roster_designation=Supplemental%20Roster%20Slots%2025-28&player_roster_designation=Supplemental%20Roster%20Slots%2029-30&club_opta_id=#{club_id}"
+  "https://eos-api.mlsdigital.net/v1/www.mlssoccer.com/players?token=
+  mp7publicdemo&player_status=active&order_by=player_last_name&player_roster
+  _designation=Senior%20Roster&player_roster_designation=Supplemental%20Roster%20Slots%2021
+  -24&player_roster_designation=Supplemental%20Roster%20Slots%2025-28&player_roster_designation
+  =Supplemental%20Roster%20Slots%2029-30&club_opta_id=#{club_id}"
 end
 
 

@@ -14,7 +14,6 @@ class MLS::Teams
     Scraper.get_clubs
   end
 
-
   def self.all
     @@teams
   end
