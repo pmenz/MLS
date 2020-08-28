@@ -41,6 +41,9 @@ class MLS::Cli
   end
 
   def team_list
+    Team.parse_clubs
+    Team.list
+=begin
     url = 'https://www.mlssoccer.com/rosters/2020'
     html = open(url)
     data = Nokogiri::HTML(html)
@@ -49,6 +52,7 @@ class MLS::Cli
       end
     clubs.each_with_index do |el, idx|
     puts "#{idx+1}.#{el}."
+=end
   end
 
 
