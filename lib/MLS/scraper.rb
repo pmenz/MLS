@@ -1,14 +1,16 @@
 class MLS::Scraper
 
+attr_accessor :name
 
 def self.get_clubs_info
-url = 'https://www.mlssoccer.com/rosters/2020'
-html = open(url)
-data = Nokogiri::HTML(html)
-clubs = data.css('.field li a').map do |el|
-  {link: "https://www.mlssoccer.com#{el.attr('href')}", name: el.text}
+  url = 'https://www.mlssoccer.com/rosters/2020'
+  html = open(url)
+  data = Nokogiri::HTML(html)
+  clubs = data.css('.field li a').map do |el|
+    el.text
+  end
+  clubs
 end
-https://www.mlssoccer.com/rosters/2020/atlanta-united
 
 def extract_club_id(string)
   line = string.split(';').find{|str| str.include? "clubID"}
@@ -22,20 +24,5 @@ def roster_link(club_id)
   -24&player_roster_designation=Supplemental%20Roster%20Slots%2025-28&player_roster_designation
   =Supplemental%20Roster%20Slots%2029-30&club_opta_id=#{club_id}"
 end
-
-
-team_selected  = "Chicago Fire"
-
-team_uri = clubs.find{|el| el[:name] == team_selected}[:link]
-html = open(team_uri)
-data = Nokogiri::HTML(html)
-raw_content = data.css('meta[name="description"]').first.attr('content')
-club_id = extract_club_id(raw_content)
-dc_united = roster_link(club_id)
-raw_data = open(dc_united).read
-data = JSON.parse(raw_data)
-player_names = data.map do |player_data|
-  "#{player_data["first_name"]} #{player_data["last_name"]}"
+a
 end
-# puts data.first.keys
-# puts player_names

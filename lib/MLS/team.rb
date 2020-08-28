@@ -16,7 +16,7 @@ class MLS::Team
   end
 
   def self.list
-
+    all.each {|el| puts "#{Team.id}. #{Team.name}"}
   def
 
   def self.all

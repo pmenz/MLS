@@ -26,7 +26,7 @@ class MLS::Cli
     if input == 1
       player_search
     elsif input == 2
-      klteam_list
+      team_list
     elsif input == 3
     puts "Goodbye!"
       return
