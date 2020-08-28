@@ -28,14 +28,14 @@ class MLS::Cli
     elsif input == 2
       MLS::Team.get_clubs
       MLS::Team.parse_clubs
-      puts "--------------------------------"
-      puts "---------- MLS Teams -----------"
-      puts "--------------------------------"
-      puts "--------------------------------"
+    puts "--------------------------------"
+    puts "---------- MLS Teams -----------"
+    puts "--------------------------------"
+    puts "--------------------------------"
       MLS::Team.print_clubs
+      team_menu
       elsif input == 3
-    puts "Goodbye!"
-      return
+        exit
     else
     puts "please select a valid option(1, 2 or 3)"
       user_valid_input
@@ -43,8 +43,17 @@ class MLS::Cli
   end
 
   def player_search
-    puts "WIP"
+    puts "W.I.P"
   end
-  
 
+  def team_menu
+    puts "print team roster"
+    puts "would you like to know more about a player? Y/n"
+    input = gets
   end
+
+  def exit
+    puts "Adios! Chao!"
+    return
+  end
+end

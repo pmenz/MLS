@@ -1,0 +1,3 @@
+class MLS::Player
+
+end
