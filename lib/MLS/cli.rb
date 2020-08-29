@@ -2,7 +2,8 @@ class MLS::Cli
 
   def call
     puts "--------------------------------"
-    puts "Welcome to MLS Teams and Players!"
+    puts "Welcome to MLS Teams and Players"
+    puts "-------------CLI----------------"
     puts "--------------------------------"
     start
   end

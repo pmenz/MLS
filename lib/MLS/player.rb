@@ -1,3 +1,4 @@
+
 class MLS::Player
 
   attr_accessor :jersey_number, :position, :roster_designations
@@ -16,6 +17,6 @@ class MLS::Player
     @@player_info<< self
   end
 
-  
+
 
 end
