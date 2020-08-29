@@ -6,7 +6,7 @@ class MLS::Scraper
     html = open(url)
     data = Nokogiri::HTML(html)
     clubs = data.css('.field li a').map do |el|
-      el.text
+      {link: "https://www.mlssoccer.com#{el.attr('href')}", name: el.text}
     end
     clubs
   end
@@ -21,6 +21,7 @@ class MLS::Scraper
   end
 
   def team_roster(team_selected)
+    clubs = MLS::Scraper.get_clubs
     team_uri = clubs.find{|el| el[:name] == team_selected}[:link]
     html = open(team_uri)
     data = Nokogiri::HTML(html)
