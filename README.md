@@ -1,9 +1,7 @@
 # MLS
 
 MLS its a project made for Flatiron School.
-This CLI will scrape and generate classes with the data acquired from the web.
-MLS-CLI uses the data from the MLS website of USA and it will give you the list
-of teams and players.
+this CLI will get you the actual teams and current plauers from the team you are interested.
 
 
 ## Installation
