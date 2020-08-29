@@ -4,24 +4,23 @@ class MLS::Cli
     puts "--------------------------------"
     puts "Welcome to MLS Teams and Players!"
     puts "--------------------------------"
-    puts "--------------------------------"
     start
   end
 
   def start
-    puts " ."
+    puts ""
     puts "What are you interested?"
-
+    puts ""
     puts "1. Player "
     puts "2. Teams "
     puts "3. Exit"
     puts ""
-    puts "--------------------------------"
-    puts "option:"
+    spacer
     user_valid_input
   end
 
   def user_valid_input
+    puts "Please select an option:"
     input = gets.strip.to_i
     if input == 1
       player_search
@@ -30,7 +29,6 @@ class MLS::Cli
       MLS::Team.parse_clubs
     puts "--------------------------------"
     puts "---------- MLS Teams -----------"
-    puts "--------------------------------"
     puts "--------------------------------"
       MLS::Team.print_clubs
       team_menu
@@ -47,32 +45,56 @@ class MLS::Cli
   end
 
   def team_menu
-    puts "Would you like to the roster of a team? (y/n)"
+    spacer
+    puts "Would you like to see the roster"
+    puts "of a team? (y/n)"
+    puts "Option:"
     input = gets.strip
     option(input)
   end
 
   def option(input)
     if input == "y"
-      puts "select team number"
-# user inputs number
-      puts MLS::Team.roster_for_team_number("1")
-
-      #get the roster
-      #ask if want to see player information.
-      #select player number
-      #valid_input
-      #print player_ifo
-      #menu
+      spacer
+      puts "Select team number"
+      puts "number?:"
+      input_number = gets.strip
+      puts "--------------------------------"
+      puts "------ Roster MLS Teasm --------"
+      puts "--------------------------------"
+      puts MLS::Team.roster_for_team_number(input_number)
+      spacer
+      puts "What are you interested now?"
+      puts "1. Player "
+      puts "2. Teams "
+      puts "3. Exit"
+      user_valid_input
     elsif input == "n"
-      puts "menu option"
+      spacer
+      puts "What are you interested now?"
+      puts "1. Player "
+      puts "2. Teams "
+      puts "3. Exit"
+      spacer
+      puts "option:"
+      user_valid_input
     else
       puts "wrong selection"
+      puts "Please select a correct option (y/n)"
+      input = gets.strip
+      option(input)
     end
   end
 
   def exit
-    puts "Adios! Chio!"
+    puts "Goodbye!"
     return
   end
+
+  def spacer
+    puts "--------------------------------"
+    puts "--------------------------------"
+  end
+
+
 end

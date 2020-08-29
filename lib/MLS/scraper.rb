@@ -30,8 +30,9 @@ class MLS::Scraper
     team = roster_link(club_id)
     raw_data = open(team).read
     data = JSON.parse(raw_data)
-    player_info = data.map do |player_info|
-      "#{player_info["jersey_number"]} #{player_info["first_name"]} #{player_info["last_name"]} #{player_info["position"]} #{player_info["roster_designations"]} #{player_info["birt"]}"
+    player_info = data.map do |player_info| #
+      # "#{player_info["jersey_number"]} #{player_info["first_name"]} #{player_info["last_name"]} #{player_info["position"]} #{player_info["roster_designations"]} #{player_info["birt"]}"
+      "#{player_info["first_name"]} #{player_info["last_name"]}"
       end
   end
 end
