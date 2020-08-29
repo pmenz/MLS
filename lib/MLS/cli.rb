@@ -9,7 +9,7 @@ class MLS::Cli
 
   def start
     puts ""
-    puts "What are you interested?"
+    puts "What are you interested in?"
     puts ""
     puts "1. Player "
     puts "2. Teams "
@@ -41,7 +41,9 @@ class MLS::Cli
   end
 
   def player_search
+    spacer
     puts "W.I.P"
+    start
   end
 
   def team_menu
