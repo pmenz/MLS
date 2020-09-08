@@ -1,7 +1,7 @@
 # MLS
 
 MLS its a project made for Flatiron School.
-this CLI will get you the actual teams and current plauers from the team you are interested.
+this CLI will get you the actual teams and current players from the team you are interested in
 
 
 ## Installation
